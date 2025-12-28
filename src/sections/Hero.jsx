@@ -1,6 +1,22 @@
 
 import { Button } from "@/components/Button"
-import { ArrowRight, Download } from "lucide-react";
+import { ArrowRight, Download, Github } from "lucide-react";
+
+
+const skills=[
+    "React",
+    "Node.js",
+    "React",
+    "Node.js",
+    "React",
+    "Node.js",
+    "React",
+    "Node.js",
+    "React",
+    "Node.js",
+    "React",
+    "Node.js",
+];
 
 export const Hero = () => {
     return (
@@ -57,12 +73,59 @@ export const Hero = () => {
                             </Button>
                             <button className="relative bg-transparent border border-border text-foreground hover:border-primary/50 transition-all duration-1000 focus-outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed group px-8 py-4 text-lg font-medium rounded-full overflow-visible animate-border ">
                                 <span className="relative z-10 flex items-center justify-center gap-2">
-                                    Download CV <Download className="h-5 w-5"/>
+                                    Download CV <Download className="h-5 w-5" />
                                 </span>
                             </button>
                         </div>
+                        {/* social links */}
+
+                        <div className="flex items-center animate-fade-in animation-delay-300 gap-4">
+                            <span className="text-sm text-muted-foreground">Follow:</span>
+                            {[
+                                { icon: Github, href: "#" },
+                                { icon: Github, href: "#" },
+                                { icon: Github, href: "#" },
+                            ].map((social, idx) => (
+                                <a href={social.href} key={idx} className="p-2 rounded-full glass hover:bg-primary/10 hover:text-primary transition-all duration-300">{<social.icon className="w-5 h-5" />}</a>
+                            ))}
+
+                        </div>
                     </div>
                     {/* right */}
+
+                    <div className="relative animate-fade-in animation-delay-300">
+                        <div className="relative max-w-md mx-auto">
+                            <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-primary/30 via-transparent to-primary/10 blur-2xl animate-pulse"/>
+                            <div className="relative glass rounded-3xl p-2 glow-border">
+                                <img src="https://www.shutterstock.com/image-vector/anime-boy-black-hair-hoodie-600nw-2078861473.jpg" alt="profile" className="w-full aspect-[4/5] object-cover rounded-2xl " />
+
+                                <div className="absolute -bottom-4 -right-4 glass rounded-xl px-4 py-3 animate-float">
+                                    <div className="flex items-center gap-3">
+                                        <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"/>
+                                            <span className="text-sm font-medium">Available for work</span>
+                                        
+                                    </div>
+                                </div>
+                                {/* stats */}
+
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {/* skills */}
+
+                <div className="mt-20 animate-fade-in animation-delay-600">
+                    <p className="text-sm text-muted-foreground mb-6 text-center">Technologies I work with</p>
+                    <div className="relative overflow-hidden">
+                        <div className="flex animate-marquee">
+                            {[...skills,...skills].map((skill,idx)=>(
+                                <div key={idx} className="flex-shrink-0 px-8 py-4">
+                                    <span className="text-xl font-semibold text-muted-foreground/50 hover:text-muted-foreground transition-colors">{skill}</span>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
