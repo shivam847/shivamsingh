@@ -1,6 +1,6 @@
 
 import { Button } from "@/components/Button"
-import { ArrowRight, Download, Github } from "lucide-react";
+import { ArrowRight, Download, Github, Linkedin, Twitter } from "lucide-react";
 
 
 const skills=[
@@ -82,9 +82,9 @@ export const Hero = () => {
                         <div className="flex items-center animate-fade-in animation-delay-300 gap-4">
                             <span className="text-sm text-muted-foreground">Follow:</span>
                             {[
+                                { icon: Linkedin, href: "#" },
                                 { icon: Github, href: "#" },
-                                { icon: Github, href: "#" },
-                                { icon: Github, href: "#" },
+                                { icon: Twitter, href: "#" },
                             ].map((social, idx) => (
                                 <a href={social.href} key={idx} className="p-2 rounded-full glass hover:bg-primary/10 hover:text-primary transition-all duration-300">{<social.icon className="w-5 h-5" />}</a>
                             ))}
